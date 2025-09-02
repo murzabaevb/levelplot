@@ -14,14 +14,38 @@ A flexible Python class for creating signal level visualizations using Matplotli
 
 ## Installation
 ```bash
-# From PyPI
-py -m pip install levelplot  # on Windows
-python3 -m pip install levelplot  # on Unix/macOS
-
 # From GitHub
 py -m pip install git+https://github.com/murzabaevb/levelplot.git  # on Windows 
 python3 -m pip install git+https://github.com/murzabaevb/levelplot.git  # on Unix/macOS
+
+# From local source (for development)
+git clone https://github.com/murzabaevb/levelplot.git
+cd levelplot
+pip install -e .
 ```
+
+## Quick Start
+
+1. Install the package:
+```bash
+pip install git+https://github.com/murzabaevb/levelplot.git
+```
+2. Create your data in a pandas DataFrame with the required columns
+3. Import and use:
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from levelplot import LevelPlot
+
+# Your data here
+data = {...}
+df = pd.DataFrame(data)
+
+plotter = LevelPlot()
+fig, axes = plotter.plot(df)
+plt.show()
+```
+
 
 ## Usage
 
@@ -111,6 +135,7 @@ plot(
     y_axis_title=None,          # Override y-axis title
     x_axis_range=None           # Override x-axis range
 )
+# Returns: (fig, axes) - matplotlib Figure and Axes objects for further customization
 ```
 
 ## Examples
@@ -182,7 +207,7 @@ plt.savefig('signals.pdf', bbox_inches='tight')  # Vector format
 
 ## License
 
-This code is provided as-is for educational and professional use. Modify and adapt as needed for your specific requirements.
+This project is licensed under the GNU General Public License. See the LICENSE.txt file for details.
 
 ## Support
 
