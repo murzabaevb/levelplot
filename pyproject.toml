@@ -14,7 +14,7 @@ authors = [
 ]
 description = "A Python class for signal level visualizations using Matplotlib."
 readme = "README.md"
-license = "MIT"
+license = "GNU General Public License"
 license-files = ["LICEN[CS]E.*"]
 keywords = ["spectrum", "frequency", "plot",]
 classifiers = [
