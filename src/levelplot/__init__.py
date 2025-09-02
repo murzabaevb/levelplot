@@ -1,7 +1,7 @@
 """
-Level Plotter Package
+Signal Level Plotter Package
 
-A package for creating signal level visualizations with matplotlib.
+A Python class for signal level visualizations using Matplotlib.
 """
 
 from .levelplot import LevelPlot

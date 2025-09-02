@@ -1,5 +1,5 @@
 # Signal Level Plotter
-A flexible Python class for creating clean, professional signal level visualizations using Matplotlib. This tool is designed for plotting signal levels as thick horizontal lines with centered labels, perfect for visualizing time-based signal data across multiple charts.
+A flexible Python class for creating signal level visualizations using Matplotlib. This tool is designed for plotting signal levels as thick horizontal lines with centered labels, perfect for visualizing frequency- or time-based signal data across multiple charts.
 
 ## Features
 - Multiple Chart Support: Create separate subplots for each unique chart identifier
@@ -9,12 +9,18 @@ A flexible Python class for creating clean, professional signal level visualizat
 - Customizable Titles: User-definable chart titles and axis labels
 - Flexible X-Axis Ranges: Auto-ranging or user-specified x-axis limits
 - Common X-Axis: All charts share the same x-axis for easy comparison
-- Color Coding: Automatic color assignment by legend value
-- Exclusion Support: Filter out unwanted signals using the 'exclude' column
+- Color Coding: Automatic color assignment
+- Exclusion Support: Filter out unwanted data entry using the 'exclude' column
 
 ## Installation
-```shell
-pip install matplotlib pandas numpy
+```bash
+# From PyPI
+py -m pip install levelplot  # on Windows
+python3 -m pip install levelplot  # on Unix/macOS
+
+# From GitHub
+py -m pip install git+https://github.com/murzabaevb/levelplot.git  # on Windows 
+python3 -m pip install git+https://github.com/murzabaevb/levelplot.git  # on Unix/macOS
 ```
 
 ## Usage
@@ -23,7 +29,9 @@ pip install matplotlib pandas numpy
 
 ```python
 import pandas as pd
-from signal_level_plotter import SignalLevelPlotter
+import matplotlib.pyplot as plt
+from levelplot import LevelPlot
+
 
 # Create sample data
 data = {
@@ -38,7 +46,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Create and use plotter
-plotter = SignalLevelPlotter()
+plotter = LevelPlot()
 fig, axes = plotter.plot(df)
 plt.show()
 ```
@@ -47,7 +55,7 @@ plt.show()
 
 ```python
 # Customize during initialization
-plotter = SignalLevelPlotter(
+plotter = LevelPlot(
     figsize=(14, 9),
     line_width=4.0,
     chart_title_prefix="My Signals - ",
@@ -83,7 +91,7 @@ The class expects a pandas DataFrame with the following columns:
 ### Class Initialization Parameters
 
 ```python
-SignalLevelPlotter(
+LevelPlot(
     figsize=(12, 10),           # Figure size (width, height)
     line_width=3.0,             # Thickness of signal lines
     chart_title_prefix="Signal Levels - ",  # Prefix for chart titles
@@ -119,7 +127,7 @@ data = {
     'level': [5.0, 3.0, 2.0, -1.5, 10.0, -8.0]
 }
 
-plotter = SignalLevelPlotter()
+plotter = LevelPlot()
 fig, axes = plotter.plot(pd.DataFrame(data))
 ```
 
@@ -137,7 +145,7 @@ plotter.plot(df, x_axis_range=(-2, 12))
 
 ```python
 # Professional styling for reports
-plotter = SignalLevelPlotter(
+plotter = LevelPlot(
     figsize=(10, 6),
     line_width=4.0,
     chart_title_prefix="Experimental Results - ",
@@ -167,12 +175,10 @@ plt.savefig('signals.pdf', bbox_inches='tight')  # Vector format
 - Process monitoring timelines
 - Resource allocation charts
 - Scheduling diagrams
-- Any time-based level data
+- Any frequency- or time-based level data
 
 ## Dependencies
-- matplotlib >= 3.0
-- pandas >= 1.0
-- numpy >= 1.0
+- matplotlib >= 3.9.2
 
 ## License
 

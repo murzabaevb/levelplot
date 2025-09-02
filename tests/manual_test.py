@@ -25,7 +25,7 @@ print("Data range:", df['start'].min(), "to", df['stop'].max())
 # Option 1: Auto range (default)
 plotter1 = LevelPlot(line_width=4.0, figsize=(12, 8))
 fig1, axes1 = plotter1.plot(df)
-plt.savefig('signal_levels_auto_range.png', dpi=300, bbox_inches='tight')
+# plt.savefig('signal_levels_auto_range.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # Option 2: Set range during initialization
@@ -35,7 +35,7 @@ plotter2 = LevelPlot(
     x_axis_range=(0, 10)  # Fixed range from 0 to 10
 )
 fig2, axes2 = plotter2.plot(df)
-plt.savefig('signal_levels_fixed_range_init.png', dpi=300, bbox_inches='tight')
+# plt.savefig('signal_levels_fixed_range_init.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # Option 3: Set range during plot call (overrides initialization)
@@ -44,7 +44,7 @@ fig3, axes3 = plotter3.plot(
     df,
     x_axis_range=(2, 6)  # Zoom in on specific region
 )
-plt.savefig('signal_levels_zoomed_range.png', dpi=300, bbox_inches='tight')
+# plt.savefig('signal_levels_zoomed_range.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # Option 4: Set range with negative values
@@ -53,5 +53,5 @@ fig4, axes4 = plotter4.plot(
     df,
     x_axis_range=(-2, 12)  # Extended range with negative start
 )
-plt.savefig('signal_levels_extended_range.png', dpi=300, bbox_inches='tight')
+# plt.savefig('signal_levels_extended_range.png', dpi=300, bbox_inches='tight')
 plt.show()

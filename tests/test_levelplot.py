@@ -29,7 +29,8 @@ def test_basic_functionality():
     plotter = LevelPlot()
     fig, axes = plotter.plot(df)
 
-    plt.savefig('test_basic.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_basic.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Basic test completed - check test_basic.png")
 
@@ -52,7 +53,8 @@ def test_multiple_charts():
     plotter = LevelPlot(figsize=(10, 8), line_width=4.0)
     fig, axes = plotter.plot(df)
 
-    plt.savefig('test_multiple_charts.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_multiple_charts.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Multiple charts test completed - check test_multiple_charts.png")
 
@@ -78,7 +80,8 @@ def test_custom_titles():
     )
 
     fig, axes = plotter.plot(df)
-    plt.savefig('test_custom_titles.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_custom_titles.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Custom titles test completed")
 
@@ -100,12 +103,14 @@ def test_x_axis_range():
     # Test zoomed-in range
     plotter = LevelPlot()
     fig, axes = plotter.plot(df, x_axis_range=(3, 7))
-    plt.savefig('test_zoomed_range.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_zoomed_range.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
 
     # Test extended range
     fig, axes = plotter.plot(df, x_axis_range=(0, 15))
-    plt.savefig('test_extended_range.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_extended_range.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ X-axis range tests completed")
 
@@ -126,7 +131,8 @@ def test_negative_levels():
 
     plotter = LevelPlot()
     fig, axes = plotter.plot(df)
-    plt.savefig('test_negative_levels.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_negative_levels.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Negative levels test completed")
 
@@ -148,7 +154,8 @@ def test_exclusion():
 
     plotter = LevelPlot()
     fig, axes = plotter.plot(df)
-    plt.savefig('test_exclusion.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_exclusion.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Exclusion test completed")
 
@@ -170,7 +177,8 @@ def test_overlapping_signals():
 
     plotter = LevelPlot()
     fig, axes = plotter.plot(df)
-    plt.savefig('test_overlapping.png', dpi=150, bbox_inches='tight')
+    # plt.savefig('test_overlapping.png', dpi=150, bbox_inches='tight')
+    plt.show()
     plt.close()
     print("✓ Overlapping signals test completed")
 

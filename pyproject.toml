@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "levelplot"
+version = "0.0.1"
+dependencies = [
+    "matplotlib~=3.9.2",
+]
+requires-python = ">=3.12"
+authors = [
+    {name = "Bakyt-Bek Murzabaev", email = "b.b.murzabaev@gmail.com"},
+]
+description = "A Python class for signal level visualizations using Matplotlib."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+keywords = ["spectrum", "frequency", "plot",]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+Homepage = "https://github.com/murzabaevb/levelplot"
+Issues = "https://github.com/murzabaevb/levelplot/issues"
